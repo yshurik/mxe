@@ -537,8 +537,8 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     </p>
 
     <ul class="compact-list">
-        <li><a href="#requirements-debian">Debian</a></li>
-        <li><a href="#requirements-fedora">Fedora</a></li>
+        <li><a href="#requirements-debian">Debian/Ubuntu</a></li>
+        <li><a href="#requirements-fedora">Fedora/Red Hat/CentOS</a></li>
         <li><a href="#requirements-freebsd">FreeBSD</a></li>
         <li><a href="#requirements-frugalware">Frugalware</a></li>
         <li><a href="#requirements-gentoo">Gentoo</a></li>
@@ -565,7 +565,7 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
         <td></td>
     </tr>
     <tr>
-        <td><a href="http://www.bzip.org/">Bzip2</a></td>
+        <td><a href="https://en.wikipedia.org/wiki/Bzip2">Bzip2</a></td>
         <td></td>
     </tr>
     <tr>
@@ -577,7 +577,7 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
         <td></td>
     </tr>
     <tr>
-        <td><a href="http://www.gdk-pixbuf.org/">gdk-pixbuf</a></td>
+        <td><a href="https://developer.gnome.org/gdk-pixbuf/">gdk-pixbuf</a></td>
         <td></td>
     </tr>
     <tr>
@@ -653,10 +653,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
         <td></td>
     </tr>
     <tr>
-        <td><a href="https://www.scons.org/">SCons</a></td>
-        <td>≥ 0.98</td>
-    </tr>
-    <tr>
         <td><a href="https://infozip.sourceforge.io/UnZip.html">UnZip</a></td>
         <td></td>
     </tr>
@@ -705,7 +701,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     pkg-config \
     python \
     ruby \
-    scons \
     sed \
     unzip \
     wget \
@@ -730,7 +725,15 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     See <a href="http://pkg.mxe.cc/">pkg.mxe.cc</a>.
     </p>
 
-    <h3 id="requirements-fedora">Fedora</h3>
+    <h3 id="requirements-fedora">Fedora/Red Hat/Centos</h3>
+
+    <p>
+    Ensure <a href="https://fedoraproject.org/wiki/EPEL">Extra Packages
+    for Enterprise Linux (EPEL)</a> is installed/available. On some
+    systems, it may be as simple as:
+    </p>
+
+    <pre>yum install epel-release</pre>
 
     <!-- https://admin.fedoraproject.org/pkgdb/ -->
     <pre>yum install \
@@ -755,7 +758,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     pkgconfig \
     python \
     ruby \
-    scons \
     sed \
     unzip \
     wget \
@@ -794,7 +796,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     pkgconf \
     python \
     ruby \
-    scons \
     unzip \
     wget</pre>
 
@@ -864,7 +865,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     pkgconfig \
     python \
     ruby \
-    scons \
     sed \
     unzip \
     wget \
@@ -893,7 +893,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     dev-util/gperf \
     dev-util/intltool \
     dev-util/pkgconfig \
-    dev-util/scons \
     dev-vcs/git \
     net-misc/wget \
     sys-apps/sed \
@@ -931,7 +930,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     libtool \
     p7zip \
     pkgconfig \
-    scons \
     wget \
     xz</pre>
 
@@ -949,7 +947,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     intltool \
     libtool \
     p7zip \
-    scons \
     sed \
     tar \
     wget \
@@ -977,7 +974,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     libtool \
     p7zip \
     pkg-config \
-    scons \
     wget \
     xz</pre>
     <p>
@@ -1033,7 +1029,6 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     pkg-config \
     python \
     ruby \
-    scons \
     sed \
     unzip \
     wget \
@@ -2908,7 +2903,7 @@ endef</pre>
 
     <ul>
     <li>
-        <a href="http://www.valdyas.org/fading/index.cgi/hacking/krita/mxe_krita.html">Cross-compiling Krita using MXE</a>
+        <a href="https://valdyas.org/fading/hacking/cross-compiling-krita-using-mxe/">Cross-compiling Krita using MXE</a>
         <br>
         Experience report of the
         <a href="https://krita.org/">Krita project</a>
@@ -3016,7 +3011,7 @@ endef</pre>
         <a href="https://cvtool.sourceforge.io/">cvtool</a>
     </li>
     <li>
-        <a href="http://www.qtrac.eu/diffpdf.html">DiffPDF</a>
+        <a href="https://www.qtrac.eu/diffpdf.html">DiffPDF</a>
     </li>
     <li>
         <a href="https://www.digikam.org/">digiKam</a>
