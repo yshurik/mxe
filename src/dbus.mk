@@ -3,10 +3,10 @@
 PKG             := dbus
 $(PKG)_WEBSITE  := https://dbus.freedesktop.org/
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 1.13.6
-$(PKG)_CHECKSUM := b533693232d36d608a09f70c15440c1816319bac3055433300d88019166c1ae4
+$(PKG)_VERSION  := 1.13.18
+$(PKG)_CHECKSUM := 8078f5c25e34ab907ce06905d969dc8ef0ccbec367e1e1707c7ecf8460f4254e
 $(PKG)_SUBDIR   := $(PKG)-$($(PKG)_VERSION)
-$(PKG)_FILE     := $(PKG)-$($(PKG)_VERSION).tar.gz
+$(PKG)_FILE     := $(PKG)-$($(PKG)_VERSION).tar.xz
 $(PKG)_URL      := https://$(PKG).freedesktop.org/releases/$(PKG)/$($(PKG)_FILE)
 $(PKG)_DEPS     := cc expat
 

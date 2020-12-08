@@ -3,8 +3,8 @@
 PKG             := protobuf
 $(PKG)_WEBSITE  := https://github.com/google/protobuf
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 3.5.2
-$(PKG)_CHECKSUM := 4ffd420f39f226e96aebc3554f9c66a912f6cad6261f39f194f16af8a1f6dab2
+$(PKG)_VERSION  := 3.9.0
+$(PKG)_CHECKSUM := 2ee9dcec820352671eb83e081295ba43f7a4157181dad549024d7070d079cf65
 $(PKG)_GH_CONF  := google/protobuf/tags,v
 $(PKG)_DEPS     := cc googlemock googletest zlib $(BUILD)~$(PKG)
 $(PKG)_TARGETS  := $(BUILD) $(MXE_TARGETS)
@@ -28,7 +28,7 @@ define $(PKG)_BUILD
 
     $(if $(BUILD_CROSS),
         '$(TARGET)-g++' \
-            -W -Wall -Werror -ansi -pedantic \
+            -W -Wall -Werror -ansi -pedantic -std=c++14 \
             '$(TEST_FILE)' -o '$(PREFIX)/$(TARGET)/bin/test-protobuf.exe' \
             `'$(TARGET)-pkg-config' protobuf --cflags --libs`
     )
