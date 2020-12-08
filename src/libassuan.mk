@@ -4,13 +4,7 @@ PKG             := libassuan
 $(PKG)_WEBSITE  := https://www.gnupg.org/related_software/libassuan/
 $(PKG)_DESCR    := libassuan
 $(PKG)_IGNORE   :=
-<<<<<<< HEAD
-$(PKG)_VERSION  := 2.5.1
-$(PKG)_CHECKSUM := 47f96c37b4f2aac289f0bc1bacfa8bd8b4b209a488d3d15e2229cb6cc9b26449
-=======
-$(PKG)_VERSION  := 2.5.3
 $(PKG)_CHECKSUM := 91bcb0403866b4e7c4bc1cc52ed4c364a9b5414b3994f718c70303f7f765e702
->>>>>>> 2020-12-08
 $(PKG)_SUBDIR   := libassuan-$($(PKG)_VERSION)
 $(PKG)_FILE     := libassuan-$($(PKG)_VERSION).tar.bz2
 $(PKG)_URL      := https://gnupg.org/ftp/gcrypt/libassuan/$($(PKG)_FILE)
