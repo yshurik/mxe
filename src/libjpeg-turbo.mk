@@ -3,8 +3,8 @@
 PKG             := libjpeg-turbo
 $(PKG)_WEBSITE  := https://libjpeg-turbo.virtualgl.org/
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 2.0.1
-$(PKG)_CHECKSUM := e5f86cec31df1d39596e0cca619ab1b01f99025a27dafdfc97a30f3a12f866ff
+$(PKG)_VERSION  := 2.0.6
+$(PKG)_CHECKSUM := d74b92ac33b0e3657123ddcf6728788c90dc84dcb6a52013d758af3c4af481bb
 $(PKG)_SUBDIR   := $(PKG)-$($(PKG)_VERSION)
 $(PKG)_FILE     := $(PKG)-$($(PKG)_VERSION).tar.gz
 $(PKG)_URL      := https://$(SOURCEFORGE_MIRROR)/project/$(PKG)/$($(PKG)_VERSION)/$($(PKG)_FILE)
@@ -13,7 +13,8 @@ $(PKG)_DEPS     := cc yasm
 define $(PKG)_UPDATE
     $(WGET) -q -O- 'https://sourceforge.net/projects/$(PKG)/files/' | \
     $(SED) -n 's,.*/projects/.*/\([0-9][^"%]*\)/".*,\1,p' | \
-    head -1
+    sort -V | \
+    tail -1
 endef
 
 define $(PKG)_BUILD

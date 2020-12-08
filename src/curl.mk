@@ -4,12 +4,12 @@ PKG             := curl
 $(PKG)_WEBSITE  := https://curl.haxx.se/libcurl/
 $(PKG)_DESCR    := cURL
 $(PKG)_IGNORE   :=
-$(PKG)_VERSION  := 7.63.0
-$(PKG)_CHECKSUM := 9600234c794bfb8a0d3f138e9294d60a20e7a5f10e35ece8cf518e2112d968c4
+$(PKG)_VERSION  := 7.73.0
+$(PKG)_CHECKSUM := 7c4c7ca4ea88abe00fea4740dcf81075c031b1d0bb23aff2d5efde20a3c2408a
 $(PKG)_SUBDIR   := curl-$($(PKG)_VERSION)
 $(PKG)_FILE     := curl-$($(PKG)_VERSION).tar.xz
 $(PKG)_URL      := https://curl.haxx.se/download/$($(PKG)_FILE)
-$(PKG)_DEPS     := cc gnutls libidn2 libssh2 pthreads
+$(PKG)_DEPS     := cc libidn2 libssh2 pthreads
 
 define $(PKG)_UPDATE
     $(WGET) -q -O- 'https://curl.haxx.se/download/?C=M;O=D' | \
@@ -18,16 +18,17 @@ define $(PKG)_UPDATE
 endef
 
 define $(PKG)_BUILD
-    cd '$(1)' && ./configure \
+    cd '$(BUILD_DIR)' && $(SOURCE_DIR)/configure \
         $(MXE_CONFIGURE_OPTS) \
-        --with-gnutls \
+        --with-winssl \
         --without-ssl \
         --with-libidn2 \
         --enable-sspi \
         --enable-ipv6 \
         --with-libssh2 \
         LIBS=`'$(TARGET)-pkg-config' pthreads --libs`
-    $(MAKE) -C '$(1)' -j '$(JOBS)' install $(MXE_DISABLE_DOCS)
+    $(MAKE) -C '$(BUILD_DIR)' -j '$(JOBS)' $(MXE_DISABLE_DOCS)
+    $(MAKE) -C '$(BUILD_DIR)' -j 1 install $(MXE_DISABLE_DOCS)
     ln -sf '$(PREFIX)/$(TARGET)/bin/curl-config' '$(PREFIX)/bin/$(TARGET)-curl-config'
 
     '$(TARGET)-gcc' \
