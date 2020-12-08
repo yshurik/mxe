@@ -19,20 +19,12 @@ $(PKG)_DEPS     := cc gettext libgpg_error
 
 define $(PKG)_UPDATE
     $(WGET) -q -O- 'https://gnupg.org/ftp/gcrypt/libassuan/' | \
-<<<<<<< HEAD
-    $(SED) -n 's,.*libassuan-\([1-9]\.[1-9][0-9][^>]*\)\.tar.*,\1,p' | \
-=======
     $(SED) -n 's,.*libassuan-\([1-9]\.[1-9]\.[0-9][^>]*\)\.tar.*,\1,p' | \
->>>>>>> 2020-12-08
     head -1
 endef
 
 define $(PKG)_BUILD
-<<<<<<< HEAD
-    cd '$(1)' && ./configure \
-=======
     cd '$(1)' && GPG_ERROR_CONFIG=$(PREFIX)/bin/$(TARGET)-gpg-error-config ./configure \
->>>>>>> 2020-12-08
         $(MXE_CONFIGURE_OPTS) \
         --disable-nls \
         --disable-languages
